@@ -148,15 +148,6 @@ def double_list():
     timelist = data_command("SELECT chat_id, scheduler FROM bot_users;")
     return timelist
 
-def parse_list():
-    timelist = data_command("SELECT user_photo, first_name, last_name, username, last_notes FROM bot_users;")
-    return timelist
-
-def double_list_username():
-    timelist = data_command("SELECT chat_id, username FROM bot_users;")
-    return timelist
-
-
 def rand_grate(id, num, interval):
     text = ""
     timelist = data_command(
@@ -182,5 +173,4 @@ def get_username(chat_id):
 
 def delete_user(chat_id):
     ex_command("DELETE FROM bot_users WHERE chat_id = '" + str(chat_id) + "'")
-    print('Удалил лентяя ' + str(chat_id))
 
