@@ -13,7 +13,6 @@ import config
 import mybotdata as bdat
 import mybotfunctions as bfunc
 import withstickers as stick
-from metrics import update_number_of_users
 
 bot = telebot.TeleBot(config.token, skip_pending=True)
 
@@ -130,7 +129,6 @@ def welcome_message(message):
     bot.send_message(message.chat.id, "Вы уже прошли регистрацию в боте. Ты в главном меню",
                      reply_markup=bdat.main_menu_buttons)
   else:
-    update_number_of_users()
     bfunc.ex_command(
       "insert into bot_users(chat_id, date) values('" + str(message.chat.id) + "', CURRENT_TIMESTAMP)")
     update_user_data(message)
@@ -859,7 +857,6 @@ def function_to_run():
         except Exception as ex:
           if 'bot was blocked by the user' in str(ex):
             bfunc.delete_user(times[i][0])
-            update_number_of_users()
           else:
             print('Возникла осечка в отправке напоминалки человеку ' + str(times[i][0]) + '.\nПричина: ')
             print(ex, type(ex), "Содержимое переменной str(ex): ", str(ex), sep='\n')
@@ -887,7 +884,6 @@ def weekly_function_to_run():
         except Exception as ex:
           if 'bot was blocked by the user' in str(ex):
             bfunc.delete_user(times[i][0])
-            update_number_of_users()
           else:
             print('Возникла осечка в отправке weekly человеку ' + str(times[i][0]) + '.\nПричина: ')
             print(ex, type(ex), "Содержимое переменной str(ex): ", str(ex), sep='\n')
