@@ -122,7 +122,7 @@ def set_notification(message):
                    reply_markup=bdat.many_moments)
   bot.register_next_step_handler(message, set_new_time)
 
-
+# ONBOARDING
 @bot.message_handler(commands=['start', 'help'])
 def welcome_message(message):
   if message.chat.id in bfunc.to_id_list(bfunc.data_command("select chat_id from bot_users")):
@@ -347,7 +347,7 @@ def set_time(message):
     bot.send_message(message.chat.id, 'Мы не понимаем ваш ответ. Советуем использовать кнопки.')
     bot.register_next_step_handler(message, set_time)
 
-
+# MAIN MENU
 @bot.message_handler(content_types=['text'])
 def main_menu(message):
   update_user_data(message)
@@ -908,7 +908,7 @@ def choose_achivement_method(chat_id):
                    'Я буду сообщать тебе о твоих достижениях, как ты хочешь получать сообщения - круглыми видеосообщениями, голосовыми или текстовыми сообщениями? В первый раз я отправил видео-кружочком. В настройках можно будет изменить способ получения достижений.',
                    reply_markup=markup)
 
-
+# BUDDY MODE
 def check_achievement(chat_id):
   number = str(bfunc.count_all(chat_id))
   triggers = set([str(x[0]) for x in bfunc.data_command("SELECT `trigger` FROM video_notes")])
