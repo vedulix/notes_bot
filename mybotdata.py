@@ -35,37 +35,18 @@ list_moments = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15
                 '19:00', '20:00', '21:00', '22:00', '23:00', '0:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00',
                 '7:00']
 
-# bot_team_text = 'Идея и продукт:\nЛев Левицкий\n@levlevitsky | @levlevitsky\_channel\n\nCтратегия и коммуникация:\nДенис Симонов\n@simonovdenis | @siimonovd\n\nРазработка:\nVladimir Networker\n@piofant\n\n[Поддержать команду бота](https://www.tinkoff.ru/rm/levitskiy.lev1/Rh9ZI13482)'
-##bot_team_text = 'Идея и продукт:\nЛев Левицкий\n@levlevitsky\n\nCтратегия и коммуникация:\nДенис Симонов\n@simonovdenis\n\nРазработка:\nVladimir Networker\n@piofant\n\nProject Manager & Localisation:\nАнастасия Широбокова\n@hedgehoggyhoge\n\n[Поддержать команду бота](https://www.donationalerts.com/r/levlevitsky)'
 bot_team_text = 'Идея и продукт:\n' \
                 + 'Лев Левицкий\n' \
                 + '@levlevitsky // @levlevitsky\_channel\n\n' \
-                + 'Cтратегия и коммуникация:\n' \
-                + 'Денис Симонов\n' \
-                + '@simonovdenis // @siimonovd\n\n' \
                 + 'Разработка:\n' \
+                + 'Vladimir Networker\n' \
                 + '@piodao // @pioblog\n' \
-                + '(Если что-то не работает – пишите мне)\n\n' \
-                + 'Вся команда:\n' \
-                + 'mental-health-matters.ru/botik-zabotik'
+                + '(Если что-то не работает – пишите мне)'
 
 help_contacts = 'Если ты чувствуешь, что тебе нужна помощь прямо сейчас, позвони на бесплатную горячую линию МЧС России:\n+78003334434. Это бесплатно и анонимно.\n\nКруглосуточная психологическая помощь для жителей Москвы: +74992165050\n\nСайты, где можно найти психолога или психотерапевта:\nbemeta.co\nzigmund.online\npsyalter.ru\nyasno.live'
 
 support_male = "Да! Не забывай, что ты прекрасен и ценен именно таким, какой ты есть.\n\nПослушай вот это: https://shellsays.art/ru\n\nВот 5 твоих случайных благодарностей за последний месяц. Уверен, они тебя порадуют :)\n\n"
 support_female = "Да! Не забывай, что ты прекрасна и ценна именно такой, какая ты есть.\n\nПослушай вот это: https://shellsays.art/ru\n\nВот 5 твоих случайных благодарностей за последний месяц. Уверен, они тебя порадуют :)\n\n"
-
-knowledge_base = 'Мы вместе с командой собрали бесплатный гайд для изучения ментального здоровья:\n\n' \
-                 + 'https://mental-health-matters.ru\n\n' \
-                 + 'В нем собраны видео, статьи и подкасты на темы:\n' \
-                 + '— эмоции\n' \
-                 + '— выгорание\n' \
-                 + '— работа и эффективность\n' \
-                 + '— смысл жизни и счастье\n' \
-                 + '— общение\n' \
-                 + '— отношения\n' \
-                 + '— перфекционизм\n\n' \
-                 + '… и многие другие\n\n' \
-                 + 'Если ты знаешь классное видео или подкаст, которого еще нет на сайте, пришли его в личку @levlevitsky'
 
 empty = telebot.types.ReplyKeyboardRemove()
 yes_no = telebot.types.ReplyKeyboardMarkup(True).row('Да', 'Нет')
@@ -107,11 +88,8 @@ many_moments_onboarding = telebot.types.ReplyKeyboardMarkup(True).row('8:00', '9
 
 last_grates_buttons = telebot.types.ReplyKeyboardMarkup(True).row('В главное меню').row('Показать все').row(
   'Неделю назад')
-# main_menu_buttons = telebot.types.ReplyKeyboardMarkup(True).row('Новая благодарность', 'Мои благодарности').row('Получить поддержку','О практике благодарности').row('Настройки','Команда бота')
-###main_menu_buttons = telebot.types.ReplyKeyboardMarkup(True).row('Новая благодарность', 'Мои благодарности').row('Получить поддержку','О практике благодарности').row('Настройки','Команда бота').row('База знаний', stick.insp)
-# main_menu_buttons = telebot.types.ReplyKeyboardMarkup(True).row('Новая благодарность', 'Мои благодарности').row('Получить поддержку','О практике благодарности').row('Настройки','Команда бота').row(stick.insp)
 main_menu_buttons = telebot.types.ReplyKeyboardMarkup(True).row('Новая благодарность', 'Мои благодарности').row(
-  'Получить поддержку', 'О практике благодарности').row(stick.insp).row('Настройки', 'Команда бота', 'База знаний')
+  'Получить поддержку', 'О практике благодарности').row(stick.insp).row('Настройки', 'Команда бота')
 
 settings_buttons = telebot.types.ReplyKeyboardMarkup(True).row('Имя').row('Обращение').row('Напоминалки').row(
   'Благодарности').row('Достижения').row('В главное меню')

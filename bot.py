@@ -16,7 +16,7 @@ import withstickers as stick
 
 bot = telebot.TeleBot(config.token, skip_pending=True)
 
-
+bot.message_handler()
 def update_user_data(message):
   bfunc.ex_command(
     "update bot_users set username = '@" + str(message.from_user.username) + "' where chat_id = '" + str(
@@ -365,12 +365,6 @@ def main_menu(message):
   elif message.text == 'Настройки':
     bot.send_message(message.chat.id, 'Что будем настраивать?', reply_markup=bdat.settings_buttons)
     bot.register_next_step_handler(message, settings)
-  elif message.text == 'База знаний':
-    # bot.send_message(message.chat.id, bdat.knowledge_base, reply_markup=bdat.main_menu_buttons)
-    bot.send_photo(message.chat.id,
-                   'AgACAgIAAxkBAAEK2eFiP4Wac9FsoAZ5UjZAqRVfeArJEgAC6cAxGyPK-EmUAytTrCDcbQEAAwIAA3MAAyME'
-                   ,
-                   caption=bdat.knowledge_base)
 
   elif message.text == 'Мои благодарности':
     bot.send_message(message.chat.id,

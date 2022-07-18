@@ -6,11 +6,6 @@ CREATE TABLE `bot_users` (
   `scheduler` varchar(30) DEFAULT '20:00',
   `username` varchar(40) DEFAULT '@N',
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `user_id` varchar(30) NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `last_name` varchar(30) NOT NULL,
-  `user_photo` varchar(100) NOT NULL,
-  `last_notes` varchar(70) NOT NULL,
   `achieve_method` varchar(100) NOT NULL DEFAULT 'voice',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14207 DEFAULT CHARSET=utf8mb4
